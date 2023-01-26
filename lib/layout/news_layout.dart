@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/shared/cubit/cubit.dart';
 import 'package:news_app/shared/cubit/states.dart';
 
+import '../modules/search/search_screen.dart';
+
 class NewsLayout extends StatelessWidget {
   const NewsLayout({Key? key}) : super(key: key);
 
@@ -23,7 +25,13 @@ class NewsLayout extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Search(),
+                        ));
+                  },
                   icon: Icon(
                     Icons.search,
                   ),
